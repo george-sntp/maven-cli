@@ -39,7 +39,7 @@ jobs:
     - name: get IQ
       run:  curl -L -f -o /tmp/nexus-iq-cli-latest.jar https://download.sonatype.com/clm/scanner/latest.jar
     - name: Scan with IQ
-      run: java -jar /tmp/nexus-iq-cli-latest.jar -i maven-github-pipeline -a ${{ secrets.iq_user }}:${{ secrets.iq_login }} -s https://iq.gnissim.eu.ngrok.io -t build .
+      run: java -jar /tmp/nexus-iq-cli-latest.jar -i maven-github-pipeline -a ${{ secrets.iq_user }}:${{ secrets.iq_login }} -s ${{ secrets.iq_url }} -t build .
       
     
     
